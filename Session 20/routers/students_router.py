@@ -13,7 +13,7 @@ router = APIRouter(
 
 @router.get("/", response_model=list[StudentResponse], status_code=status.HTTP_200_OK)
 def get_all_data_student(db: Session = Depends(handle_connect_DB)):
-    students = students_service.handle_get_all_student(db = db)
+    students = students_service.handle_get_all_data_student(db = db)
     return students
 
 @router.post("/", response_model=StudentResponse, status_code=status.HTTP_201_CREATED)
